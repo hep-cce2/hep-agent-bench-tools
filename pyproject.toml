@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hep-agent-bench-tools"
+version = "0.1.0"
+description = "Grader helpers for hep-agent-bench tasks: scoring, timing, results and baseline integrity."
+license = { text = "Apache-2.0" }
+requires-python = ">=3.9"
+dependencies = []
+
+[project.urls]
+Specification = "https://github.com/hep-cce2/hep-agent-bench-spec"
+Tasks = "https://github.com/hep-cce2/hep-agent-bench"
+
+[tool.setuptools.packages.find]
+where = ["src"]
