@@ -26,7 +26,7 @@ def test_write_result(tmp_path):
     out = write_result(tmp_path / "v", 0.25, True, speedup=2.0)
     assert (tmp_path / "v" / "reward.txt").read_text() == "0.250000\n"
     assert json.loads((tmp_path / "v" / "metrics.json").read_text()) == out
-    assert out["spec_version"] and out["speedup"] == 2.0
+    assert out["rubric_version"] == "0.2" and out["speedup"] == 2.0
     with pytest.raises(ValueError):
         write_result(tmp_path, math.nan, True)
     with pytest.raises(ValueError):

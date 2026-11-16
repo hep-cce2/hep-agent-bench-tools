@@ -1,12 +1,12 @@
 # hep-agent-bench-tools
 
-`hepbench`: grader helpers for [hep-agent-bench](https://github.com/hep-cce2/hep-agent-bench) tasks. Each helper implements one rule of the [spec](https://github.com/hep-cce2/hep-agent-bench-spec/blob/main/grading.md). Standard library only, Python 3.9+.
+`hepbench`: grader helpers for [hep-agent-bench](https://github.com/hep-cce2/hep-agent-bench) tasks. Each helper implements one rule of the [rubric](https://github.com/hep-cce2/hep-agent-bench-rubric/blob/main/grading.md). Standard library only, Python 3.9+.
 
-| | Spec rule |
+| | Rubric rule |
 |---|---|
 | `log_gain_vs_expert(agent_gain, expert_gain)` | the `log-gain-vs-expert` score, uncapped |
 | `gated_reward(correct, score)` | 0 unless the gate passed, else clamp to [0, 1] |
-| `write_result(logs_dir, reward, correct, **metrics)` | `reward.txt` + `metrics.json` with `spec_version` |
+| `write_result(logs_dir, reward, correct, **metrics)` | `reward.txt` + `metrics.json` with `rubric_version` |
 | `median_time(fn, make_input, iterations)` | median of N timed calls, fresh input per call |
 | `python -m hepbench.snapshot create / verify / export` | baseline integrity: manifest of Git blob hashes, check, clean copy |
 
@@ -17,7 +17,7 @@ Install at grading time, pinned, so nothing in the agent's image is used:
 ```toml
 # task.toml
 [verifier.env]
-HEPBENCH_TOOLS = "git+https://github.com/hep-cce2/hep-agent-bench-tools@v0.1.0"
+HEPBENCH_TOOLS = "git+https://github.com/hep-cce2/hep-agent-bench-tools@v0.2.0"
 ```
 
 ```bash
@@ -47,4 +47,4 @@ python -m hepbench.snapshot create --repo path/to/checkout --upstream https://gi
 pip install -e . pytest && pytest
 ```
 
-Versions follow the spec: `hepbench` 0.1.x implements spec 0.1.
+Versions follow the rubric: `hepbench` 0.2.x implements rubric 0.2.

@@ -1,4 +1,4 @@
-"""Map a continuous figure of merit to a reward in [0, 1] (spec: grading.md, "Scores")."""
+"""Map a continuous figure of merit to a reward in [0, 1] (rubric: grading.md, "Scores")."""
 
 from __future__ import annotations
 
