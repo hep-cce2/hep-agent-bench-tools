@@ -1,4 +1,4 @@
-"""Timing protocol (spec: grading.md, "Timing")."""
+"""Timing protocol (rubric: grading.md, "Timing")."""
 
 from __future__ import annotations
 

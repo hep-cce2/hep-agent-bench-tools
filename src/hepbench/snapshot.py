@@ -1,4 +1,4 @@
-"""Check a baseline tree against Git blob hashes (spec: grading.md, "Baseline integrity").
+"""Check a baseline tree against Git blob hashes (rubric: grading.md, "Baseline integrity").
 
 usage: python -m hepbench.snapshot verify --root DIR --manifest source-manifest.json
        python -m hepbench.snapshot export --root DIR --manifest source-manifest.json --dest NEW_DIR
